@@ -6,6 +6,8 @@ import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+require('events');
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +47,43 @@ class App extends React.Component {
                   geometry={{primitive: 'box', depth: 0.2, height: 0.2, width: 0.2}}
                   material={{color: '#24CAFF'}}/>
         </Entity>
+		
+		<Entity id="entity--plane--menu"
+		  geometry={{primitive: 'plane', height: 1, width: 3.5}}
+		  position= {{x: 0.1, y: 2.4, z: -3}}
+		  material={{color: '#778899', opacity: 0.6}}>
+		</Entity>
+		
+		<Entity id="entity--box--menu1"
+		  geometry={{primitive: 'box'}}
+		  position= {{x: -1.1, y: 2.4, z: -3}}
+		  scale = {{x: 0.5, y: 0.5, z: 0.1}}
+		  material={{color: '#DC143C'}}>
+		</Entity>
+		
+		<Entity id="entity--box--menu2"
+		  geometry={{primitive: 'box'}}
+		  position= {{x: -0.3, y: 2.4, z: -3}}
+		  scale = {{x: 0.5, y: 0.5, z: 0.1}}
+		  material={{color: '#00FFFF'}}>
+		</Entity>
+		
+		<Entity id="entity--box--menu3"
+		  geometry={{primitive: 'box'}}
+		  position= {{x: 0.5, y: 2.4, z: -3}}
+		  scale = {{x: 0.5, y: 0.5, z: 0.1}}
+		  material={{color: '#00008B'}}
+		  >
+		</Entity>
+		
+		<Entity id="entity--box--menu4"
+		  geometry={{primitive: 'box'}}
+		  position= {{x: 1.3, y: 2.4, z: -3}}
+		  scale = {{x: 0.5, y: 0.5, z: 0.1}}
+		  material={{color: '#FF8C00'}}	
+		  set-color >
+		</Entity>
+		 
 
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
